@@ -1,12 +1,34 @@
 {
   "name": "dom-funcs",
-  "version": "0.0.0",
-  "description": "dom-funcs module",
+  "version": "0.1.0",
+  "description": "A very limited subset of dom functions I use every day",
   "repository": "jeromedecoster/dom-funcs",
-  "main": "index.js",
+  "files": [
+    "get-attributes.js"
+  ],
+  "keywords": [
+    "node",
+    "attributes",
+    "parse",
+    "serialize"
+  ],
+  "author": {
+    "name": "Jérôme Decoster",
+    "url": "http://jeromedecoster.com"
+  },
+  "license": "MIT",
   "scripts": {
+    "start": "budo src/index.js:bundle.js --dir src --host localhost --port 3000 --no-debug --open",
+    "dev": "budo src/index.js:bundle.js --dir src --port 3000 --no-debug --live",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT"
+  "dependencies": {
+    "is-funcs": "^0.5.1",
+    "object-funcs": "^0.4.0",
+    "to-funcs": "^0.3.0"
+  },
+  "devDependencies": {
+    "budo": "^8.3.0",
+    "tape": "^4.6.0"
+  }
 }
