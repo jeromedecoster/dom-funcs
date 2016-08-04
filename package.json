@@ -1,16 +1,22 @@
 {
   "name": "dom-funcs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A very limited subset of dom functions I use every day",
   "repository": "jeromedecoster/dom-funcs",
   "files": [
-    "get-attributes.js"
+    "get-attributes.js",
+    "load-image.js"
   ],
   "keywords": [
     "node",
     "attributes",
     "parse",
-    "serialize"
+    "serialize",
+    "load",
+    "image",
+    "blank",
+    "1x1",
+    "gif"
   ],
   "author": {
     "name": "Jérôme Decoster",

@@ -13,6 +13,7 @@ Package [on npm](https://www.npmjs.com/package/dom-funcs)
 ## API
 
 * [get-attributes](#getattributesnode-name)
+* [load-image](#loadimagesrc-cb-ctx)
 
 ## getAttributes(node, name)
 
@@ -64,6 +65,49 @@ const getAttributes = require('dom-funcs/get-attributes')
 // {src:'img.jpg', offset:250, zIndex:1000, enabled:true}
 getAttributes(document.querySelector('#ref3'), 'image')
 ```
+
+## loadImage(src, [cb], [ctx])
+
+Create an image, execute a callback when the loading is done. Fallback with the famous transparent 1x1 gif
+
+| Argument | Action |
+| :------ | :------- |
+| **src** | the source of the image |
+| **cb** | optional callback. Called once the loading is done with the image as first argument |
+| **ctx** | optional context of `this`, default to global |
+
+Return the created image
+
+```js
+const load = require('dom-funcs/load-image')
+
+function onload(img) {
+  // the image `width`
+  img.width
+}
+
+var el = load('img.jpg', onload)
+document.body.appendChild(el)
+```
+
+If the image doesn't exists, the returned image is a transparent 1x1 gif
+
+```js
+const load = require('dom-funcs/load-image')
+
+function onload(img) {
+  // 1
+  img.width
+}
+
+var el = load('path-to-nothing.jpg', onload)
+document.body.appendChild(el)
+```
+
+## Thanks
+
+Mainly forked / inspired on
+- [load-img](https://github.com/mattdesl/load-img)
 
 ## License
 

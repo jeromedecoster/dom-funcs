@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>get-attributes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png">
+    <style type="text/css">
+      body { margin: 0; }
+    </style>
+  </head>
+  <body get-attributes>
+
+    <div
+      id="test-1"
+      DATA-image-src="img.jpg"
+      image-x2="-.456"
+      image-y2=""
+      data-image-offset="0.1234"
+      data-image-x="-.4567"
+      data-image-y=""
+      data-image-z-index="1987"
+      data-imagefoo="bar"
+      data-image-no="false"
+      data-image-yes="true"
+      data-image="src3(img3.jpg) x3(-.456789) y3() z-index3(888)"
+      image="src4(img4.jpg) x4(-.456) y4() z-index4(1000) y2(a)"
+      imagebar="baz"></div>
+
+    <div
+      id="test-2"
+      data-image="src(img.jpg) x(-.456) y() z-index(1000) offset(999) no(false) yes(true)"
+      data-image-offset="0.123"></div>
+
+    <div
+      id="test-3"
+      image-src="img.jpg  "
+      image-offset="0.123"
+      image-x="-.456"
+      image-y=""
+      image-z-index="1000"
+      imagefoo="bar"></div>
+
+    <div
+      id="error-1"
+      data-image="src(img.jpg"
+      data-image-offset="0.123"></div>
+
+    <div
+      id="error-2"
+      data-image="src(img.jpg) x(-.456 y() z-index(1000)"
+      data-image-offset="0.123"></div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
