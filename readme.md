@@ -28,6 +28,7 @@ Return an object
 
 * keys are transform to camelcase
 * values are serialized. Number and Boolean are converted
+* values can be simple **Math expression** – [see toNumber](https://github.com/jeromedecoster/to-funcs#tonumberdata-fallback)
 
 ```html
 <div id="ref1" image-src="img.jpg" image-offset="250" image-z-index="1000" image-enabled="true" foo="bar"></div>
@@ -64,6 +65,19 @@ const getAttributes = require('dom-funcs/get-attributes')
 
 // {src:'img.jpg', offset:250, zIndex:1000, enabled:true}
 getAttributes(document.querySelector('#ref3'), 'image')
+```
+
+Using math expression
+
+```html
+<div id="ref4" image="x(-.1 + -.2) y(100/250)"></div>
+```
+
+```js
+const getAttributes = require('dom-funcs/get-attributes')
+
+// {x:-.3, y:.4}
+getAttributes(document.querySelector('#ref4'), 'image')
 ```
 
 ## loadImage(src, [cb], [ctx])

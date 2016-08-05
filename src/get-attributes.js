@@ -77,6 +77,22 @@ test('node-attributes data-name', function (t) {
   t.end()
 })
 
+test('node-attributes math expression', function (t) {
+
+  var el = document.querySelector('#test-4')
+
+  var res = {
+    x:      -.3,
+    y:      .4,
+    z:      Infinity,
+    wrong1: '0/0',
+    wrong2: '1.2/+-2',
+    offset: 3.2
+  }
+  t.deepEqual(fn(el, 'image'), res)
+  t.end()
+})
+
 test('node-attributes parse error', function (t) {
 
   var el1 = document.querySelector('#error-1')

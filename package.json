@@ -1,6 +1,6 @@
 {
   "name": "dom-funcs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A very limited subset of dom functions I use every day",
   "repository": "jeromedecoster/dom-funcs",
   "files": [
@@ -31,7 +31,7 @@
   "dependencies": {
     "is-funcs": "^0.5.1",
     "object-funcs": "^0.4.0",
-    "to-funcs": "^0.3.0"
+    "to-funcs": "^0.4.0"
   },
   "devDependencies": {
     "budo": "^8.3.0",
